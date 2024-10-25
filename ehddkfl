@@ -1,0 +1,638 @@
+conda란
+Conda는 소프트웨어 패키지와 환경을 관리하는 시스템으로, 데이터 과학과 머신 러닝에 많이 사용됩니다. 독립적인 환경을 생성하여 서로 다른 프로젝트 간의 패키지 충돌을 방지할 수 있으며, 다양한 운영 체제와 언어를 지원합니다. 패키지 설치 및 의존성 관리를 간편하게 해주는 도구입니다.
+wget란
+wget은 웹에서 파일을 다운로드하기 위한 명령줄 도구입니다. HTTP, HTTPS, FTP 등 다양한 프로토콜을 지원하며, 자동화된 스크립트에서 사용하기에 적합합니다. 여러 파일을 한 번에 다운로드하거나, 특정 웹사이트의 내용을 미러링하는 데 유용하게 활용됩니다.
+torch란
+"torch"는 Python에서 딥러닝과 텐서 연산을 위한 인기 있는 라이브러리인 PyTorch를 지칭합니다. PyTorch는 동적 계산 그래프를 지원하여 유연하고 직관적인 모델 구축을 가능하게 합니다. 주로 머신러닝, 컴퓨터 비전, 자연어 처리 등 다양한 분야에서 사용됩니다.
+torchvosion이란
+"torchvision"은 PyTorch의 추가 라이브러리로, 주로 컴퓨터 비전 작업을 지원합니다. 이미지 및 비디오 데이터셋을 쉽게 로드하고 전처리할 수 있는 도구와 함께, 다양한 사전 학습된 모델과 이미지 변환 기능을 제공합니다. 이 라이브러리를 사용하면 이미지 분류, 객체 탐지 등 다양한 비전 관련 작업을 더 쉽게 수행할 수 있습니다.
+
+
+dli@dli-desktop:~$ sudo chmod 755 Archiconda3-0.2.3-Linux-aarch64.sh
+dli@dli-desktop:~$ ./Archiconda3-0.2.3-Linux-aarch64.sh
+
+Welcome to Archiconda3 0.2.3
+
+In order to continue the installation process, please review the license
+agreement.
+Please, press ENTER to continue
+>>> 
+Copyright (c) 2016-2017 Jonathan J. Helmus
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+    * Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above
+       copyright notice, this list of conditions and the following
+       disclaimer in the documentation and/or other materials provided
+       with the distribution.
+
+    * Neither the name of the developers nor the names of any
+       contributors may be used to endorse or promote products derived
+       from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Do you accept the license terms? [yes|no]
+[no] >>> 
+Please answer 'yes' or 'no':'
+>>> yes
+
+Archiconda3 will now be installed into this location:
+/home/dli/archiconda3
+
+  - Press ENTER to confirm the location
+  - Press CTRL-C to abort the installation
+  - Or specify a different location below
+
+[/home/dli/archiconda3] >>> 
+ERROR: File or directory already exists: '/home/dli/archiconda3'
+If you want to update an existing installation, use the -u option.
+dli@dli-desktop:~$ conda env list
+bash: conda: command not found
+dli@dli-desktop:~$ conda env list
+bash: conda: command not found
+dli@dli-desktop:~$ ls
+archiconda3  Documents  examples.desktop  Music     Public     USB-Camera
+Desktop      Downloads  jetson-fan-ctl    Pictures  Templates  Videos
+dli@dli-desktop:~$  ./Archiconda3-0.2.3-Linux-aarch64.sh
+bash: ./Archiconda3-0.2.3-Linux-aarch64.sh: No such file or directory
+dli@dli-desktop:~$ wget https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh
+--2024-10-25 13:40:41--  https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh
+Resolving github.com (github.com)... 64:ff9b::14c8:f5f7, 20.200.245.247
+Connecting to github.com (github.com)|64:ff9b::14c8:f5f7|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/162905847/58728680-3cf7-11e9-94f6-5558e2e82ea9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241025T044042Z&X-Amz-Expires=300&X-Amz-Signature=e35b84423650cf3b811d9a296098127e21c563f62c9e661b6b9f6483613e9f0d&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DArchiconda3-0.2.3-Linux-aarch64.sh&response-content-type=application%2Foctet-stream [following]
+--2024-10-25 13:40:42--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/162905847/58728680-3cf7-11e9-94f6-5558e2e82ea9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241025%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241025T044042Z&X-Amz-Expires=300&X-Amz-Signature=e35b84423650cf3b811d9a296098127e21c563f62c9e661b6b9f6483613e9f0d&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DArchiconda3-0.2.3-Linux-aarch64.sh&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 64:ff9b::b9c7:6d85, 64:ff9b::b9c7:6c85, 64:ff9b::b9c7:6f85, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|64:ff9b::b9c7:6d85|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 40699275 (39M) [application/octet-stream]
+Saving to: ‘Archiconda3-0.2.3-Linux-aarch64.sh’
+
+Archiconda3-0.2.3-L 100%[===================>]  38.81M  2.34MB/s    in 26s     
+
+2024-10-25 13:41:10 (1.50 MB/s) - ‘Archiconda3-0.2.3-Linux-aarch64.sh’ saved [40699275/40699275]
+
+dli@dli-desktop:~$ sudo chmod 755 Archiconda3-0.2.3-Linux-aarch64.sh
+dli@dli-desktop:~$  ./Archiconda3-0.2.3-Linux-aarch64.sh 
+
+Welcome to Archiconda3 0.2.3
+
+In order to continue the installation process, please review the license
+agreement.
+Please, press ENTER to continue
+>>> 
+Copyright (c) 2016-2017 Jonathan J. Helmus
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+    * Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above
+       copyright notice, this list of conditions and the following
+       disclaimer in the documentation and/or other materials provided
+       with the distribution.
+
+    * Neither the name of the developers nor the names of any
+       contributors may be used to endorse or promote products derived
+       from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Do you accept the license terms? [yes|no]
+[no] >>> 
+Please answer 'yes' or 'no':'
+>>> yes
+
+Archiconda3 will now be installed into this location:
+/home/dli/archiconda3
+
+  - Press ENTER to confirm the location
+  - Press CTRL-C to abort the installation
+  - Or specify a different location below
+
+[/home/dli/archiconda3] >>> 
+PREFIX=/home/dli/archiconda3
+installing: python-3.7.1-h39be038_1002 ...
+Python 3.7.1
+installing: ca-certificates-2018.03.07-0 ...
+installing: conda-env-2.6.0-1 ...
+installing: libgcc-ng-7.3.0-h5c90dd9_0 ...
+installing: libstdcxx-ng-7.3.0-h5c90dd9_0 ...
+installing: bzip2-1.0.6-h7b6447c_6 ...
+installing: libffi-3.2.1-h71b71f5_5 ...
+installing: ncurses-6.1-h71b71f5_0 ...
+installing: openssl-1.1.1a-h14c3975_1000 ...
+installing: xz-5.2.4-h7ce4240_4 ...
+installing: yaml-0.1.7-h7ce4240_3 ...
+installing: zlib-1.2.11-h7b6447c_2 ...
+installing: readline-7.0-h7ce4240_5 ...
+installing: tk-8.6.9-h84994c4_1000 ...
+installing: sqlite-3.26.0-h1a3e907_1000 ...
+installing: asn1crypto-0.24.0-py37_0 ...
+installing: certifi-2018.10.15-py37_0 ...
+installing: chardet-3.0.4-py37_1 ...
+installing: idna-2.7-py37_0 ...
+installing: pycosat-0.6.3-py37h7b6447c_0 ...
+installing: pycparser-2.19-py37_0 ...
+installing: pysocks-1.6.8-py37_0 ...
+installing: ruamel_yaml-0.15.64-py37h7b6447c_0 ...
+installing: six-1.11.0-py37_1 ...
+installing: cffi-1.11.5-py37hc365091_1 ...
+installing: setuptools-40.4.3-py37_0 ...
+installing: cryptography-2.5-py37h9d9f1b6_1 ...
+installing: wheel-0.32.1-py37_0 ...
+installing: pip-10.0.1-py37_0 ...
+installing: pyopenssl-18.0.0-py37_0 ...
+installing: urllib3-1.23-py37_0 ...
+installing: requests-2.19.1-py37_0 ...
+installing: conda-4.5.12-py37_0 ...
+installation finished.
+Do you wish the installer to initialize Archiconda3
+in your /home/dli/.bashrc ? [yes|no]
+[no] >>> yes
+
+Initializing Archiconda3 in /home/dli/.bashrc
+A backup will be made to: /home/dli/.bashrc-archiconda3.bak
+
+
+For this change to become active, you have to open a new terminal.
+
+Thank you for installing Archiconda3!
+dli@dli-desktop:~$ conda env list
+bash: conda: command not found
+dli@dli-desktop:~$ conda create -n yolo python=3.8 -y
+bash: conda: command not found
+dli@dli-desktop:~$ source ~/.bashrc
+dli@dli-desktop:~$ conda create -n yolo python=3.8 -y
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/dli/archiconda3/envs/yolo
+
+  added / updated specs: 
+    - python=3.8
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _openmp_mutex-4.5          |            2_gnu          23 KB  conda-forge
+    libuuid-2.32.1             |    hf897c2e_1000          30 KB  conda-forge
+    sqlite-3.40.0              |       h69ca7e5_0        1007 KB  conda-forge
+    ncurses-6.3                |       headf329_1         1.1 MB  conda-forge
+    xz-5.2.6                   |       h9cdd2b7_0         430 KB  conda-forge
+    python-3.8.13              |h92ab765_0_cpython        12.4 MB  conda-forge
+    libzlib-1.2.13             |       h4e544f5_4          72 KB  conda-forge
+    openssl-3.0.7              |       h4e544f5_0         2.8 MB  conda-forge
+    bzip2-1.0.8                |       hf897c2e_4         396 KB  conda-forge
+    readline-8.1.2             |       h38e3740_0         305 KB  conda-forge
+    libgcc-ng-12.2.0           |      h607ecd0_19         528 KB  conda-forge
+    wheel-0.38.4               |     pyhd8ed1ab_0          32 KB  conda-forge
+    tk-8.6.12                  |       hd8af866_0         3.4 MB  conda-forge
+    libffi-3.4.2               |       h3557bc0_5          58 KB  conda-forge
+    setuptools-65.5.1          |     pyhd8ed1ab_0         731 KB  conda-forge
+    libsqlite-3.40.0           |       hf9034f9_0        1005 KB  conda-forge
+    ld_impl_linux-aarch64-2.39 |       ha75b1e8_0         806 KB  conda-forge
+    libgomp-12.2.0             |      h607ecd0_19         455 KB  conda-forge
+    pip-22.3.1                 |     pyhd8ed1ab_0         1.5 MB  conda-forge
+    ca-certificates-2018.03.07 |                0         123 KB  c4aarch64
+    libnsl-2.0.0               |       hf897c2e_0          31 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        27.1 MB
+
+The following NEW packages will be INSTALLED:
+
+    _openmp_mutex:         4.5-2_gnu                 conda-forge
+    bzip2:                 1.0.8-hf897c2e_4          conda-forge
+    ca-certificates:       2018.03.07-0              c4aarch64  
+    ld_impl_linux-aarch64: 2.39-ha75b1e8_0           conda-forge
+    libffi:                3.4.2-h3557bc0_5          conda-forge
+    libgcc-ng:             12.2.0-h607ecd0_19        conda-forge
+    libgomp:               12.2.0-h607ecd0_19        conda-forge
+    libnsl:                2.0.0-hf897c2e_0          conda-forge
+    libsqlite:             3.40.0-hf9034f9_0         conda-forge
+    libuuid:               2.32.1-hf897c2e_1000      conda-forge
+    libzlib:               1.2.13-h4e544f5_4         conda-forge
+    ncurses:               6.3-headf329_1            conda-forge
+    openssl:               3.0.7-h4e544f5_0          conda-forge
+    pip:                   22.3.1-pyhd8ed1ab_0       conda-forge
+    python:                3.8.13-h92ab765_0_cpython conda-forge
+    readline:              8.1.2-h38e3740_0          conda-forge
+    setuptools:            65.5.1-pyhd8ed1ab_0       conda-forge
+    sqlite:                3.40.0-h69ca7e5_0         conda-forge
+    tk:                    8.6.12-hd8af866_0         conda-forge
+    wheel:                 0.38.4-pyhd8ed1ab_0       conda-forge
+    xz:                    5.2.6-h9cdd2b7_0          conda-forge
+
+
+Downloading and Extracting Packages
+_openmp_mutex-4.5    | 23 KB     | ##################################### | 100% 
+libuuid-2.32.1       | 30 KB     | ##################################### | 100% 
+sqlite-3.40.0        | 1007 KB   | ##################################### | 100% 
+ncurses-6.3          | 1.1 MB    | ##################################### | 100% 
+xz-5.2.6             | 430 KB    | ##################################### | 100% 
+python-3.8.13        | 12.4 MB   | ##################################### | 100% 
+libzlib-1.2.13       | 72 KB     | ##################################### | 100% 
+openssl-3.0.7        | 2.8 MB    | ##################################### | 100% 
+bzip2-1.0.8          | 396 KB    | ##################################### | 100% 
+readline-8.1.2       | 305 KB    | ##################################### | 100% 
+libgcc-ng-12.2.0     | 528 KB    | ##################################### | 100% 
+wheel-0.38.4         | 32 KB     | ##################################### | 100% 
+tk-8.6.12            | 3.4 MB    | ##################################### | 100% 
+libffi-3.4.2         | 58 KB     | ##################################### | 100% 
+setuptools-65.5.1    | 731 KB    | ##################################### | 100% 
+libsqlite-3.40.0     | 1005 KB   | ##################################### | 100% 
+ld_impl_linux-aarch6 | 806 KB    | ##################################### | 100% 
+libgomp-12.2.0       | 455 KB    | ##################################### | 100% 
+pip-22.3.1           | 1.5 MB    | ##################################### | 100% 
+ca-certificates-2018 | 123 KB    | ##################################### | 100% 
+libnsl-2.0.0         | 31 KB     | ##################################### | 100% 
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate yolo
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+dli@dli-desktop:~$ conda env list
+# conda environments:
+#
+base                  *  /home/dli/archiconda3
+yolo                     /home/dli/archiconda3/envs/yolo
+
+dli@dli-desktop:~$ conda activate yolo
+(yolo) dli@dli-desktop:~$  pip install -U pip wheel gdown
+Requirement already satisfied: pip in ./archiconda3/envs/yolo/lib/python3.8/site-packages (22.3.1)
+Collecting pip
+  Downloading pip-24.2-py3-none-any.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 1.8 MB/s eta 0:00:00
+Requirement already satisfied: wheel in ./archiconda3/envs/yolo/lib/python3.8/site-packages (0.38.4)
+Collecting wheel
+  Downloading wheel-0.44.0-py3-none-any.whl (67 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.1/67.1 kB 3.1 MB/s eta 0:00:00
+Collecting gdown
+  Downloading gdown-5.2.0-py3-none-any.whl (18 kB)
+Collecting requests[socks]
+  Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 3.1 MB/s eta 0:00:00
+Collecting filelock
+  Downloading filelock-3.16.1-py3-none-any.whl (16 kB)
+Collecting tqdm
+  Downloading tqdm-4.66.5-py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.4/78.4 kB 3.4 MB/s eta 0:00:00
+Collecting beautifulsoup4
+  Downloading beautifulsoup4-4.12.3-py3-none-any.whl (147 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 147.9/147.9 kB 2.2 MB/s eta 0:00:00
+Collecting soupsieve>1.2
+  Downloading soupsieve-2.6-py3-none-any.whl (36 kB)
+Collecting urllib3<3,>=1.21.1
+  Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.3/126.3 kB 2.8 MB/s eta 0:00:00
+Collecting certifi>=2017.4.17
+  Downloading certifi-2024.8.30-py3-none-any.whl (167 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 167.3/167.3 kB 3.6 MB/s eta 0:00:00
+Collecting charset-normalizer<4,>=2
+  Downloading charset_normalizer-3.4.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (139 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.3/139.3 kB 3.0 MB/s eta 0:00:00
+Collecting idna<4,>=2.5
+  Downloading idna-3.10-py3-none-any.whl (70 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 2.5 MB/s eta 0:00:00
+Collecting PySocks!=1.5.7,>=1.5.6
+  Downloading PySocks-1.7.1-py3-none-any.whl (16 kB)
+Installing collected packages: wheel, urllib3, tqdm, soupsieve, PySocks, pip, idna, filelock, charset-normalizer, certifi, requests, beautifulsoup4, gdown
+  Attempting uninstall: wheel
+    Found existing installation: wheel 0.38.4
+    Uninstalling wheel-0.38.4:
+      Successfully uninstalled wheel-0.38.4
+  Attempting uninstall: pip
+    Found existing installation: pip 22.3.1
+    Uninstalling pip-22.3.1:
+      Successfully uninstalled pip-22.3.1
+Successfully installed PySocks-1.7.1 beautifulsoup4-4.12.3 certifi-2024.8.30 charset-normalizer-3.4.0 filelock-3.16.1 gdown-5.2.0 idna-3.10 pip-24.2 requests-2.32.3 soupsieve-2.6 tqdm-4.66.5 urllib3-2.2.3 wheel-0.44.0
+(yolo) dli@dli-desktop:~$  gdown https://drive.google.com/uc?id=1hs9HM0XJ2LPFghcn7ZMOs5qu5HexPXwM
+Downloading...
+From (original): https://drive.google.com/uc?id=1hs9HM0XJ2LPFghcn7ZMOs5qu5HexPXwM
+From (redirected): https://drive.google.com/uc?id=1hs9HM0XJ2LPFghcn7ZMOs5qu5HexPXwM&confirm=t&uuid=bd0a4797-25f6-4c7f-85b3-566c0d60dd50
+To: /home/dli/torch-1.11.0a0+gitbc2c6ed-cp38-cp38-linux_aarch64.whl
+100%|████████████████████████████████████████| 206M/206M [00:57<00:00, 3.58MB/s]
+(yolo) dli@dli-desktop:~$ gdown https://drive.google.com/uc?id=1m0d8ruUY8RvCP9eVjZw4Nc8LAwM8yuGV
+
+Downloading...
+From: https://drive.google.com/uc?id=1m0d8ruUY8RvCP9eVjZw4Nc8LAwM8yuGV
+To: /home/dli/torchvision-0.12.0a0+9b5a3fe-cp38-cp38-linux_aarch64.whl
+100%|██████████████████████████████████████| 8.71M/8.71M [00:02<00:00, 3.07MB/s]
+(yolo) dli@dli-desktop:~$ 
+(yolo) dli@dli-desktop:~$ sudo apt-get install libopenblas-base libopenmpi-dev
+[sudo] password for dli: 
+Sorry, try again.
+[sudo] password for dli: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  apt-clone archdetect-deb bogl-bterm busybox-static cryptsetup-bin dpkg-repack
+  gir1.2-timezonemap-1.0 gir1.2-xkl-1.0 grub-common kde-window-manager
+  kpackagetool5 kwayland-data kwin-common kwin-data kwin-x11 libdebian-installer4
+  libkdecorations2-5v5 libkdecorations2private5v5 libkf5activities5
+  libkf5declarative-data libkf5declarative5 libkf5globalaccelprivate5
+  libkf5idletime5 libkf5kcmutils-data libkf5kcmutils5 libkf5package-data
+  libkf5package5 libkf5plasma5 libkf5quickaddons5 libkf5waylandclient5
+  libkf5waylandserver5 libkscreenlocker5 libkwin4-effect-builtins1
+  libkwineffects11 libkwinglutils11 libkwinxrenderutils11 libqgsttools-p1
+  libqt5designer5 libqt5help5 libqt5multimedia5 libqt5multimedia5-plugins
+  libqt5multimediaquick-p5 libqt5multimediawidgets5 libqt5opengl5
+  libqt5quickwidgets5 libqt5sql5 libqt5test5 libxcb-composite0 libxcb-cursor0
+  libxcb-damage0 os-prober python3-dbus.mainloop.pyqt5 python3-icu python3-pam
+  python3-pyqt5 python3-pyqt5.qtsvg python3-pyqt5.qtwebkit
+  qml-module-org-kde-kquickcontrolsaddons qml-module-qtmultimedia
+  qml-module-qtquick2 rdate tasksel tasksel-data
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  ibverbs-providers libhwloc-dev libhwloc-plugins libhwloc5 libibverbs-dev
+  libnuma-dev libopenmpi2 ocl-icd-libopencl1 openmpi-bin openmpi-common
+Suggested packages:
+  libhwloc-contrib-plugins openmpi-doc opencl-icd gfortran
+The following NEW packages will be installed:
+  ibverbs-providers libhwloc-dev libhwloc-plugins libhwloc5 libibverbs-dev
+  libnuma-dev libopenblas-base libopenmpi-dev libopenmpi2 ocl-icd-libopencl1
+  openmpi-bin openmpi-common
+0 upgraded, 12 newly installed, 0 to remove and 10 not upgraded.
+Need to get 5,249 kB of archives.
+After this operation, 27.6 MB of additional disk space will be used.
+Do you want to continue? [Y/n] yes
+Get:1 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 ibverbs-providers arm64 17.1-1ubuntu0.2 [136 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 libopenblas-base arm64 0.2.20+ds-4 [1,814 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 libhwloc5 arm64 1.11.9-1 [84.4 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports bionic/main arm64 ocl-icd-libopencl1 arm64 2.2.11-1ubuntu1 [29.2 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 libhwloc-plugins arm64 1.11.9-1 [11.2 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 libopenmpi2 arm64 2.1.1-8 [1,746 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 openmpi-common all 2.1.1-8 [140 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 openmpi-bin arm64 2.1.1-8 [81.4 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 libnuma-dev arm64 2.0.11-2.1ubuntu0.1 [31.1 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 libhwloc-dev arm64 1.11.9-1 [149 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 libibverbs-dev arm64 17.1-1ubuntu0.2 [103 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 libopenmpi-dev arm64 2.1.1-8 [924 kB]
+Fetched 5,249 kB in 7s (762 kB/s)                                                  
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package ibverbs-providers:arm64.
+(Reading database ... 181951 files and directories currently installed.)
+Preparing to unpack .../00-ibverbs-providers_17.1-1ubuntu0.2_arm64.deb ...
+Unpacking ibverbs-providers:arm64 (17.1-1ubuntu0.2) ...
+Selecting previously unselected package libopenblas-base:arm64.
+Preparing to unpack .../01-libopenblas-base_0.2.20+ds-4_arm64.deb ...
+Unpacking libopenblas-base:arm64 (0.2.20+ds-4) ...
+Selecting previously unselected package libhwloc5:arm64.
+Preparing to unpack .../02-libhwloc5_1.11.9-1_arm64.deb ...
+Unpacking libhwloc5:arm64 (1.11.9-1) ...
+Selecting previously unselected package ocl-icd-libopencl1:arm64.
+Preparing to unpack .../03-ocl-icd-libopencl1_2.2.11-1ubuntu1_arm64.deb ...
+Unpacking ocl-icd-libopencl1:arm64 (2.2.11-1ubuntu1) ...
+Selecting previously unselected package libhwloc-plugins.
+Preparing to unpack .../04-libhwloc-plugins_1.11.9-1_arm64.deb ...
+Unpacking libhwloc-plugins (1.11.9-1) ...
+Selecting previously unselected package libopenmpi2:arm64.
+Preparing to unpack .../05-libopenmpi2_2.1.1-8_arm64.deb ...
+Unpacking libopenmpi2:arm64 (2.1.1-8) ...
+Selecting previously unselected package openmpi-common.
+Preparing to unpack .../06-openmpi-common_2.1.1-8_all.deb ...
+Unpacking openmpi-common (2.1.1-8) ...
+Selecting previously unselected package openmpi-bin.
+Preparing to unpack .../07-openmpi-bin_2.1.1-8_arm64.deb ...
+Unpacking openmpi-bin (2.1.1-8) ...
+Selecting previously unselected package libnuma-dev:arm64.
+Preparing to unpack .../08-libnuma-dev_2.0.11-2.1ubuntu0.1_arm64.deb ...
+Unpacking libnuma-dev:arm64 (2.0.11-2.1ubuntu0.1) ...
+Selecting previously unselected package libhwloc-dev:arm64.
+Preparing to unpack .../09-libhwloc-dev_1.11.9-1_arm64.deb ...
+Unpacking libhwloc-dev:arm64 (1.11.9-1) ...
+Selecting previously unselected package libibverbs-dev:arm64.
+Preparing to unpack .../10-libibverbs-dev_17.1-1ubuntu0.2_arm64.deb ...
+Unpacking libibverbs-dev:arm64 (17.1-1ubuntu0.2) ...
+Selecting previously unselected package libopenmpi-dev.
+Preparing to unpack .../11-libopenmpi-dev_2.1.1-8_arm64.deb ...
+Unpacking libopenmpi-dev (2.1.1-8) ...
+Setting up libhwloc5:arm64 (1.11.9-1) ...
+Setting up openmpi-common (2.1.1-8) ...
+Setting up ibverbs-providers:arm64 (17.1-1ubuntu0.2) ...
+Setting up libnuma-dev:arm64 (2.0.11-2.1ubuntu0.1) ...
+Setting up ocl-icd-libopencl1:arm64 (2.2.11-1ubuntu1) ...
+Setting up libibverbs-dev:arm64 (17.1-1ubuntu0.2) ...
+Setting up libopenblas-base:arm64 (0.2.20+ds-4) ...
+update-alternatives: using /usr/lib/aarch64-linux-gnu/openblas/libblas.so.3 to provide /usr/lib/aarch64-linux-gnu/libblas.so.3 (libblas.so.3-aarch64-linux-gnu) in auto mode
+update-alternatives: using /usr/lib/aarch64-linux-gnu/openblas/liblapack.so.3 to provide /usr/lib/aarch64-linux-gnu/liblapack.so.3 (liblapack.so.3-aarch64-linux-gnu) in auto mode
+Setting up libhwloc-dev:arm64 (1.11.9-1) ...
+Setting up libhwloc-plugins (1.11.9-1) ...
+Setting up libopenmpi2:arm64 (2.1.1-8) ...
+Setting up libopenmpi-dev (2.1.1-8) ...
+update-alternatives: using /usr/lib/aarch64-linux-gnu/openmpi/include to provide /usr/include/mpi (mpi) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/mpicc.1.gz because associated file /usr/share/man/man1/mpicc.openmpi.1.gz (of link group mpi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/mpic++.1.gz because associated file /usr/share/man/man1/mpic++.openmpi.1.gz (of link group mpi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/mpicxx.1.gz because associated file /usr/share/man/man1/mpicxx.openmpi.1.gz (of link group mpi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/mpiCC.1.gz because associated file /usr/share/man/man1/mpiCC.openmpi.1.gz (of link group mpi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/mpif77.1.gz because associated file /usr/share/man/man1/mpif77.openmpi.1.gz (of link group mpi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/mpif90.1.gz because associated file /usr/share/man/man1/mpif90.openmpi.1.gz (of link group mpi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/mpifort.1.gz because associated file /usr/share/man/man1/mpifort.openmpi.1.gz (of link group mpi) doesn't exist
+Setting up openmpi-bin (2.1.1-8) ...
+update-alternatives: using /usr/bin/mpirun.openmpi to provide /usr/bin/mpirun (mpirun) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/mpirun.1.gz because associated file /usr/share/man/man1/mpirun.openmpi.1.gz (of link group mpirun) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/mpiexec.1.gz because associated file /usr/share/man/man1/mpiexec.openmpi.1.gz (of link group mpirun) doesn't exist
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.6) ...
+(yolo) dli@dli-desktop:~$ pip install torch-1.11.0a0+gitbc2c6ed-cp38-cp38-linux_aarch64.whl
+Processing ./torch-1.11.0a0+gitbc2c6ed-cp38-cp38-linux_aarch64.whl
+Collecting typing-extensions (from torch==1.11.0a0+gitbc2c6ed)
+  Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Installing collected packages: typing-extensions, torch
+pip install torchvision-0.12.0a0+9b5a3fe-cp38-cp38-linux_aarch64.whl
+Successfully installed torch-1.11.0a0+gitbc2c6ed typing-extensions-4.12.2
+(yolo) dli@dli-desktop:~$ pip install torchvision-0.12.0a0+9b5a3fe-cp38-cp38-linux_aarch64.whl
+Processing ./torchvision-0.12.0a0+9b5a3fe-cp38-cp38-linux_aarch64.whl
+Requirement already satisfied: typing-extensions in ./archiconda3/envs/yolo/lib/python3.8/site-packages (from torchvision==0.12.0a0+9b5a3fe) (4.12.2)
+Collecting numpy (from torchvision==0.12.0a0+9b5a3fe)
+  Downloading numpy-1.24.4-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (5.6 kB)
+Requirement already satisfied: requests in ./archiconda3/envs/yolo/lib/python3.8/site-packages (from torchvision==0.12.0a0+9b5a3fe) (2.32.3)
+Requirement already satisfied: torch in ./archiconda3/envs/yolo/lib/python3.8/site-packages (from torchvision==0.12.0a0+9b5a3fe) (1.11.0a0+gitbc2c6ed)
+Collecting pillow!=8.3.*,>=5.3.0 (from torchvision==0.12.0a0+9b5a3fe)
+  Downloading pillow-10.4.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (9.2 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./archiconda3/envs/yolo/lib/python3.8/site-packages (from requests->torchvision==0.12.0a0+9b5a3fe) (3.4.0)
+Requirement already satisfied: idna<4,>=2.5 in ./archiconda3/envs/yolo/lib/python3.8/site-packages (from requests->torchvision==0.12.0a0+9b5a3fe) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./archiconda3/envs/yolo/lib/python3.8/site-packages (from requests->torchvision==0.12.0a0+9b5a3fe) (2.2.3)
+Requirement already satisfied: certifi>=2017.4.17 in ./archiconda3/envs/yolo/lib/python3.8/site-packages (from requests->torchvision==0.12.0a0+9b5a3fe) (2024.8.30)
+Downloading pillow-10.4.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (4.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 3.0 MB/s eta 0:00:00
+Downloading numpy-1.24.4-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 2.2 MB/s eta 0:00:00
+Installing collected packages: pillow, numpy, torchvision
+Successfully installed numpy-1.24.4 pillow-10.4.0 torchvision-0.12.0a0+9b5a3fe
+(yolo) dli@dli-desktop:~$ python -c "import torch; print(torch.__version__)"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/site-packages/torch/__init__.py", line 198, in <module>
+    _load_global_deps()
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/site-packages/torch/__init__.py", line 151, in _load_global_deps
+    ctypes.CDLL(lib_path, mode=ctypes.RTLD_GLOBAL)
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: libomp.so.5: cannot open shared object file: No such file or directory
+(yolo) dli@dli-desktop:~$ python -c "import torch; print(torch.__version__)"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/site-packages/torch/__init__.py", line 198, in <module>
+    _load_global_deps()
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/site-packages/torch/__init__.py", line 151, in _load_global_deps
+    ctypes.CDLL(lib_path, mode=ctypes.RTLD_GLOBAL)
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: libomp.so.5: cannot open shared object file: No such file or directory
+(yolo) dli@dli-desktop:~$  conda install numpy 
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/dli/archiconda3/envs/yolo
+
+  added / updated specs: 
+    - numpy
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    python_abi-3.8             |           2_cp38           4 KB  conda-forge
+    libgfortran-ng-12.2.0      |      he9431aa_19          22 KB  conda-forge
+    libstdcxx-ng-12.2.0        |      hc13a102_19         4.2 MB  conda-forge
+    numpy-1.23.4               |   py38h0fc68d9_1         6.7 MB  conda-forge
+    libgfortran5-12.2.0        |      hf695500_19         1.3 MB  conda-forge
+    liblapack-3.9.0            |16_linuxaarch64_openblas          13 KB  conda-forge
+    libblas-3.9.0              |16_linuxaarch64_openblas          13 KB  conda-forge
+    libcblas-3.9.0             |16_linuxaarch64_openblas          13 KB  conda-forge
+    libopenblas-0.3.21         |pthreads_h6cb6f83_3         7.2 MB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        19.4 MB
+
+The following NEW packages will be INSTALLED:
+
+    libblas:        3.9.0-16_linuxaarch64_openblas conda-forge
+    libcblas:       3.9.0-16_linuxaarch64_openblas conda-forge
+    libgfortran-ng: 12.2.0-he9431aa_19             conda-forge
+    libgfortran5:   12.2.0-hf695500_19             conda-forge
+    liblapack:      3.9.0-16_linuxaarch64_openblas conda-forge
+    libopenblas:    0.3.21-pthreads_h6cb6f83_3     conda-forge
+    libstdcxx-ng:   12.2.0-hc13a102_19             conda-forge
+    numpy:          1.23.4-py38h0fc68d9_1          conda-forge
+    python_abi:     3.8-2_cp38                     conda-forge
+
+Proceed ([y]/n)? yes
+
+
+Downloading and Extracting Packages
+python_abi-3.8       | 4 KB      | ######################################### | 100% 
+libgfortran-ng-12.2. | 22 KB     | ######################################### | 100% 
+libstdcxx-ng-12.2.0  | 4.2 MB    | ######################################### | 100% 
+numpy-1.23.4         | 6.7 MB    | ######################################### | 100% 
+libgfortran5-12.2.0  | 1.3 MB    | ######################################### | 100% 
+liblapack-3.9.0      | 13 KB     | ######################################### | 100% 
+libblas-3.9.0        | 13 KB     | ######################################### | 100% 
+libcblas-3.9.0       | 13 KB     | ######################################### | 100% 
+libopenblas-0.3.21   | 7.2 MB    | ######################################### | 100% 
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(yolo) dli@dli-desktop:~$ import torch
+import-im6.q16: not authorized `torch' @ error/constitute.c/WriteImage/1037.
+(yolo) dli@dli-desktop:~$ python
+Python 3.8.13 | packaged by conda-forge | (default, Mar 25 2022, 05:56:18) 
+[GCC 10.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/site-packages/torch/__init__.py", line 198, in <module>
+    _load_global_deps()
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/site-packages/torch/__init__.py", line 151, in _load_global_deps
+    ctypes.CDLL(lib_path, mode=ctypes.RTLD_GLOBAL)
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: libomp.so.5: cannot open shared object file: No such file or directory
+>>> import torchvision
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/site-packages/torchvision/__init__.py", line 4, in <module>
+    import torch
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/site-packages/torch/__init__.py", line 198, in <module>
+    _load_global_deps()
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/site-packages/torch/__init__.py", line 151, in _load_global_deps
+    ctypes.CDLL(lib_path, mode=ctypes.RTLD_GLOBAL)
+  File "/home/dli/archiconda3/envs/yolo/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: libomp.so.5: cannot open shared object file: No such file or directory
+>>> print(torch.__version__)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'torch' is not defined
+>>> print(torchvision.__version__)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'torchvision' is not defined
+>>> print("cuda used", torch.cuda.is_available())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'torch' is not defined
+>>> cuda used True
+  File "<stdin>", line 1
+    cuda used True
+         ^
+SyntaxError: invalid syntax
+>>> git clone https://github.com/Tory-Hwang/Jetson-Nano2
+  File "<stdin>", line 1
+    git clone https://github.com/Tory-Hwang/Jetson-Nano2
+        ^
+SyntaxError: invalid syntax
+>>> Jetson-Nano2/
+  File "<stdin>", line 1
+    Jetson-Nano2/
+                ^
+SyntaxError: invalid syntax
+>>> 
